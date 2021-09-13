@@ -3,9 +3,19 @@ function sendApiRequest() {  // promise
     console.log(userInput)
     
     var giphyApiKey = "c44438D7l3N66PdiRNPzhTnWRjsJkBaw" // recieved api through GIPHY Developers 
-    var giphyApiURL = `https://api.giphy.com/v1/gifs/search?q=${userInput}&rating=g&api_key=${giphyApiKey}` 
+    var giphyApiURL = `https://api.giphy.com/v1/gifs/search?q=${userInput}&api_key=${giphyApiKey}` 
     //this will allow user to enter in word/name to pull GIFs from api 
     
+    // api URL: https://api.giphy.com/v1/gifs/search?q=${userInput}&rating=g&api_key${giphyApiKey}
+
+    // breakdown to api URL: 
+    // q= (specifying what we're going to look for)
+    // $ (endpoint)
+    // & (separating)
+    // ${giphyApiKey} (references api key)
+
+
+
     fetch(giphyApiURL).then(function(data) {// pulling data from GIPHY 
     return data.json() // returns data 
     })
